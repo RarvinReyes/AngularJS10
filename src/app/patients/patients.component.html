@@ -1,0 +1,39 @@
+<div class="container">
+  <h1 class="display-4 text-center">Patient Records</h1>
+  <hr>
+  <button type="button" class="btn btn-primary" (click)="service.resetForm()" data-toggle="modal"
+    data-target="#addPatientModal">
+    Add Patient
+  </button>
+  <div class="col-md-12">
+    <app-patient-list></app-patient-list>
+  </div>
+  <div class="modal" id="addPatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="w-50 m-auto modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Patient</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <app-patient></app-patient>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="editPatientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="w-50 m-auto modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Patient</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <app-patient></app-patient>
+      </div>
+    </div>
+  </div>
+</div>

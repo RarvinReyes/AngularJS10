@@ -1,0 +1,145 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off" enctype="multipart/form-data">
+  <input type="text" id="Id" name="Id" #id="ngModel" hidden [(ngModel)]="service.formData.Id" />
+  <div class="modal-body">
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" name="Name" #Name="ngModel"
+          [(ngModel)]="service.formData.Name" required />
+          <div class="text-danger" *ngIf="Name.invalid && Name.touched">This field is required.</div>
+      </div>
+      <div class="col-md-4">
+        <label for="FileNo">FileNo</label>
+        <input type="text" class="form-control" id="FileNo" name="FileNo" #FileNo="ngModel"
+          [(ngModel)]="service.formData.FileNo" />
+
+      </div>
+      <div class="col-md-4">
+        <label for="CitizenId">CitizenId</label>
+        <input type="text" class="form-control" id="CitizenId" name="CitizenId" #CitizenId="ngModel"
+          [(ngModel)]="service.formData.CitizenId" required />
+          <div class="text-danger" *ngIf="CitizenId.invalid && CitizenId.touched">This field is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label for="Birthdate">Birthdate</label>
+        <input type="date" class="form-control" id="Birthdate" name="Birthdate" #Birthdate="ngModel"
+          [(ngModel)]="service.formData.Birthdate" required />
+          <div class="text-danger" *ngIf="Birthdate.invalid && Birthdate.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="Nationality">Nationality</label>
+        <input type="text" class="form-control" id="Nationality" name="Nationality" #Nationality="ngModel"
+          [(ngModel)]="service.formData.Nationality" required />
+          <div class="text-danger" *ngIf="Nationality.invalid && Nationality.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4 mt-3">
+        <input type="radio" class="" id="Male" name="Gender" value="0" #male="ngModel"
+          [(ngModel)]="service.formData.Gender" class="mx-2" />
+        <label for="Male"> Male </label>
+        <input type="radio" class="" id="Female" name="Gender" value="1" #female="ngModel"
+          [(ngModel)]="service.formData.Gender" class="ml-4 mr-2" />
+        <label for="Female"> Female </label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label for="PhoneNumber">PhoneNumber</label>
+        <input type="tel" class="form-control" id="PhoneNumber" name="PhoneNumber" #PhoneNumber="ngModel"
+          [(ngModel)]="service.formData.PhoneNumber" required />
+          <div class="text-danger" *ngIf="PhoneNumber.invalid && PhoneNumber.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" #Email="ngModel" email
+          [(ngModel)]="service.formData.Email" required />
+          <div class="text-danger" *ngIf="Email.invalid && Email.touched">Proper email address is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label for="Country">Country</label>
+        <input type="text" class="form-control" id="Country" name="Country" #Country="ngModel"
+          [(ngModel)]="service.formData.Country" required />
+          <div class="text-danger" *ngIf="Country.invalid && Country.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="City">City</label>
+        <input type="text" class="form-control" id="City" name="City" #City="ngModel"
+          [(ngModel)]="service.formData.City" required />
+          <div class="text-danger" *ngIf="City.invalid && City.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="Street">Street</label>
+        <input type="text" class="form-control" id="Street" name="Street" #Street="ngModel"
+          [(ngModel)]="service.formData.Street" required />
+          <div class="text-danger" *ngIf="Street.invalid && Street.touched">This field is required.</div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-6">
+        <label for="Address1">Address1</label>
+        <input type="text" class="form-control" id="Address1" name="Address1" #Address1="ngModel"
+          [(ngModel)]="service.formData.Address1" required />
+          <div class="text-danger" *ngIf="Address1.invalid && Address1.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-6">
+        <label for="Address2">Address2</label>
+        <input type="text" class="form-control" id="Address2" name="Address2" #Address2="ngModel"
+          [(ngModel)]="service.formData.Address2" />
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label for="ContactPerson">Contact Person</label>
+        <input type="text" class="form-control" id="ContactPerson" name="ContactPerson" #ContactPerson="ngModel"
+          [(ngModel)]="service.formData.ContactPerson" required />
+          <div class="text-danger" *ngIf="ContactPerson.invalid && ContactPerson.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="ContactRelation">Contact Relation</label>
+        <input type="text" class="form-control" id="ContactRelation" name="ContactRelation" #ContactRelation="ngModel"
+          [(ngModel)]="service.formData.ContactRelation" required />
+          <div class="text-danger" *ngIf="ContactRelation.invalid && ContactRelation.touched">This field is required.</div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="ContactPhone">Contact Phone</label>
+        <input type="text" class="form-control" id="ContactPhone" name="ContactPhone" #ContactPhone="ngModel"
+          [(ngModel)]="service.formData.ContactPhone" required />
+          <div class="text-danger" *ngIf="ContactPhone.invalid && ContactPhone.touched">This field is required.</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <label for="FirstVisitDate">First Visit Date</label>
+        <input type="date" class="form-control" id="FirstVisitDate" name="FirstVisitDate" #FirstVisitDate="ngModel"
+          [(ngModel)]="service.formData.FirstVisitDate" required />
+          <div class="text-danger" *ngIf="FirstVisitDate.invalid && FirstVisitDate.touched">This field is required.</div>
+      </div>
+      <div class="col-md-4">
+        <label for="FileName">Photo</label>
+        <input type="file" id="FileName" name="FileName" (change)="handleFileInput($event.target.files)" />
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Submit</button>
+    <button type="button" id="closeModal" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  </div>
+</form>
+<!--  data-dismiss="modal" -->

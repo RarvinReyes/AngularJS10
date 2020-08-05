@@ -1,0 +1,65 @@
+<div class="table table-responsive table-hover">
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Actions </th>
+        <th> Name </th>
+        <th> File No. </th>
+        <th> Citizen Id </th>
+        <th> Birthdate </th>
+        <th> Gender </th>
+        <th> Nationality </th>
+        <th> Phone Number </th>
+        <th> Email </th>
+        <th> Country </th>
+        <th> City </th>
+        <th> Street </th>
+        <th> Address1 </th>
+        <th> Address2 </th>
+        <th> Contact Person </th>
+        <th> Photo </th>
+        <th> Contact Relation </th>
+        <th> Contact Phone </th>
+        <th> First Visit Date </th>
+        <th> Record Creation Date </th>
+        <th> Actions </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of service.list">
+        <td> 
+          <button class="btn btn-sm btn-danger" (click)="removeRecord(patient)">Delete</button>
+          <button class="btn btn-sm btn-success" (click)="populateForm(patient)" data-toggle="modal" data-target="#editPatientModal">
+            Edit
+          </button>
+        </td>
+        <td> {{ patient.Name }} </td>
+        <td> {{ patient.FileNo }} </td>
+        <td> {{ patient.CitizenId }} </td>
+        <td> {{ patient.Birthdate }} </td>
+        <td> {{ patient.Gender ? "Female" : "Male" }} </td>
+        <td> {{ patient.Nationality }} </td>
+        <td> {{ patient.PhoneNumber }} </td>
+        <td> {{ patient.Email }} </td>
+        <td> {{ patient.Country }} </td>
+        <td> {{ patient.City }} </td>
+        <td> {{ patient.Street }} </td>
+        <td> {{ patient.Address1 }} </td>
+        <td> {{ patient.Address2 }} </td>
+        <td> {{ patient.ContactPerson }} </td>
+        <td *ngIf="!patient.Photo" ></td>
+        <td *ngIf="patient.Photo" > <img [src]=" service.path + patient.Photo | sanitizeUrl: 'url'" alt="Patient's photo" ></td>
+        <td> {{ patient.ContactRelation }} </td>
+        <td> {{ patient.ContactPhone }} </td>
+        <td> {{ patient.FirstVisitDate }} </td>
+        <td> {{ patient.RecordCreationDate }} </td>
+        <td> 
+          <button class="btn btn-sm btn-danger" (click)="removeRecord(patient)">Delete</button>
+          <button class="btn btn-sm btn-success" (click)="populateForm(patient)" data-toggle="modal" data-target="#editPatientModal">
+            Edit
+          </button> 
+        </td>
+      </tr>
+    <tbody>
+  </table>
+</div>
