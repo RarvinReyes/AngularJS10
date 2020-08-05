@@ -18,9 +18,16 @@ export class PatientComponent implements OnInit {
     this.service.resetForm();
   }
 
+  fileTypes: string[] = ["jpg","png","jpeg","jpe"];
   fileToUpload: File = null;
   handleFileInput(files: FileList) {
-    this.fileToUpload = files.item(0);
+    let file = files.item(0);
+    if(this.fileTypes.includes(file.type)) {
+      this.fileToUpload = files.item(0);
+    } else {
+      jQuery('#FileName').val('');
+      alert("please upload image.");
+    }
   }
 
   onSubmit(form: NgForm) {
